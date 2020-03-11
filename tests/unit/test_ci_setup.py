@@ -57,7 +57,7 @@ class TestCISetup:
             'container_platform': 'APPUiO',
             'environment_strategy': 'shared',
             'expected_ci_target': '',
-        }),
+        })
     ]
 
     # pylint: disable=too-many-arguments,too-many-locals,no-self-use
