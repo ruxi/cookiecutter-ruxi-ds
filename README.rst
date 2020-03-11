@@ -2,7 +2,7 @@
 cookiecutter painless data science
 ===================================
 
-|version| |coverage-codacy| |grade-codacy| |issues| |last commit|
+|version| |tag| |coverage-codacy| |grade-codacy| |issues| |last commit|
 | TravisCI |travis-ci| ShippableCI: |shippable-ci| CodeshipCI: |codeship-ci| 
 
 Project template for reproducible data science using conda environments. This `cookiecutter`_ is forked from `painless-continuous-delivery`_ for continous integration support
@@ -35,10 +35,12 @@ Boilerplate includes preloaded conda environment.yml of standard data science to
 .. |last commit| image::  https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds
 
-.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds/master.svg
-   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds
+.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver/master.svg
+   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver
 
-
+.. |tag| image::  https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver/master.svg
+   :target: https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver
+   
 .. |travis-ci| image:: https://img.shields.io/travis/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://travis-ci.org/ruxi/cookiecutter-ruxi-ds
    :alt: Travis CI
