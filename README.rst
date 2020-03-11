@@ -35,11 +35,11 @@ Boilerplate includes preloaded conda environment.yml of standard data science to
 .. |last commit| image::  https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds
 
-.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver/master.svg
-   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver
+.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases/master.svg
+   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds?include_prereleases
 
-.. |tag| image::  https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver/master.svg
-   :target: https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases&sort=semver
+.. |tag| image::  https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases/master.svg
+   :target: https://img.shields.io/github/v/tag/ruxi/cookiecutter-ruxi-ds?include_prereleases
    
 .. |travis-ci| image:: https://img.shields.io/travis/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://travis-ci.org/ruxi/cookiecutter-ruxi-ds
