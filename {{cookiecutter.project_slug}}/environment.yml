@@ -1,0 +1,35 @@
+name: {{ cookiecutter.project_slug }}    
+channels:
+  - conda-forge                     # We added a third party channel
+  - bioconda
+dependencies:
+  - pandas
+  - jupyter
+  # Jupyter
+  - jupyterlab
+  - nodejs
+  - nbconvert
+  - widgetsnbextension
+  - conda-forge::jupyter_contrib_nbextensions
+  - conda-forge::cookiecutter
+  # Python Kernel
+  - python
+  - pip
+  - ipykernel
+  - ipywidgets
+  - seaborn
+  - nbconvert
+  - tqdm
+  - conda-forge::scikit-learn #for one-hot encoding
+  # R
+  - rpy2
+  - r-essentials
+  - r-ggplot2
+  - r-irkernel=1.0
+  - pip:                            # Packages installed from PyPI
+    - requests
+
+  # other libraries
+  ## sudo apt-get install pandoc
+  ## sudo apt-get install texlive-xetex\
+  ## texlive-fonts-recommended texlive-generic-recommended

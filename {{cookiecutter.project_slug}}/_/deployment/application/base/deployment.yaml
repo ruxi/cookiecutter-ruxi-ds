@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        name: application
+    spec:
+      initContainers:
+      - name: wait-for-database
+        image: IMAGE
+        command: {% if cookiecutter.framework == 'Django' -%}
+            ["python", "manage.py", "wait_for_database"]
+          {%- else -%}
+            ["sleep", "20"]
+          {%- endif %}
+        envFrom:
+        - configMapRef:
+            name: application
+        - secretRef:
+            name: application
+      containers:
+      - name: {{ cookiecutter.framework|lower }}
+        image: IMAGE
+        ports:
+        - name: uwsgi
+          containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: application
+        - secretRef:
+            name: application
+        livenessProbe:
+          tcpSocket:
+            port: uwsgi
+          initialDelaySeconds: 13
+        readinessProbe:
+          tcpSocket:
+            port: uwsgi
+          initialDelaySeconds: 9
+        resources:
+          requests:
+            cpu: 500m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sleep", "20"]
+      - name: nginx
+        image: IMAGE
+        command: ["nginx"]
+        ports:
+        - name: http
+          containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          initialDelaySeconds: 13
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          initialDelaySeconds: 9
+        resources:
+          requests:
+            cpu: 100m
+            memory: 32Mi
+          limits:
+            cpu: 200m
+            memory: 64Mi
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sleep", "20"]
+      restartPolicy: Always
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  name: application
+              topologyKey: kubernetes.io/hostname

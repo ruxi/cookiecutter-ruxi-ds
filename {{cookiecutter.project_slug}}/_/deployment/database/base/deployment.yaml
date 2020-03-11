@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  serviceName: postgres
+  template:
+    spec:
+      containers:
+      - name: postgres
+        image: docker.io/bitnami/postgresql:12
+        imagePullPolicy: Always
+        ports:
+        - name: postgres
+          containerPort: 5432
+        envFrom:
+        - secretRef:
+            name: postgres
+        livenessProbe:
+          tcpSocket:
+            port: postgres
+          initialDelaySeconds: 30
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -i
+            - -c
+            - PGPASSWORD=$POSTGRESQL_PASSWORD 
+              psql -h 127.0.0.1 -U $POSTGRESQL_USERNAME -q -d $POSTGRESQL_DATABASE -c
+              'SELECT 1'
+          initialDelaySeconds: 8
+        resources:
+          requests:
+            cpu: 500m
+            memory: 512Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+        volumeMounts:
+        - name: data
+          mountPath: /bitnami/postgresql
+      restartPolicy: Always
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi

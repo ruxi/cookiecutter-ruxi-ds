@@ -1,0 +1,5 @@
+{% if cookiecutter.checks %}{% for env in cookiecutter.checks.split(",") | unique %}
+{{ env }}:
+  extends: .check
+  script: tox -e {{ env }}
+{% endfor %}{% endif -%}

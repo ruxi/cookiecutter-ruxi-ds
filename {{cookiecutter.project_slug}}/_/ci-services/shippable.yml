@@ -1,0 +1,14 @@
+# Painless deployment with Shippable.
+# Visit the docs at http://docs.shippable.com/ci/shippableyml/
+
+language: python
+python:
+- 3.7
+
+env:
+  matrix:  # tox -l | xargs -I ARG echo '    - TOXENV=ARG'
+{%- include '_/ci-services/definitions/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/lint-stage/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/test-stage/%s' % cookiecutter.ci_service %}
+{% include '_/ci-services/build-stage/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/deploy-stage/%s' % cookiecutter.ci_service -%}

@@ -1,0 +1,68 @@
+# Painless deployment with Bitbucket Pipelines.
+# Visit the docs at https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html
+
+options:
+    docker: true
+
+definitions:
+  steps:
+  - parallel: &checks
+    - step:
+        name: Flake8
+        image: docker.io/painless/tox
+        script:
+        - tox -e flake8
+    - step:
+        name: Pylint
+        image: docker.io/painless/tox
+        script:
+        - tox -e pylint
+    - step:
+        name: Bandit
+        image: docker.io/painless/tox
+        script:
+        - tox -e bandit || true
+
+  - parallel: &tests
+    - step:
+        name: Python 3.5
+        script:
+        - tox -e py35
+    - step:
+        name: Python 3.6
+        script:
+        - tox -e py36
+    - step:
+        name: Python 3.7
+        script:
+        - tox -e py37
+    - step:
+        name: Python 3.8
+        script:
+        - tox -e py38
+    - step:
+        name: PyPy 3
+        script:
+        - tox -e pypy3
+    - step:
+        name: Behave
+        script:
+        - tox -e behave
+
+  - steps: &field-test
+      name: Deploy example-bitbucket
+      deployment: Production
+      script:
+      - tests/field/example-bitbucket.sh
+
+pipelines:
+  pull-requests:
+    '**':
+    - parallel: *checks
+    - parallel: *tests
+
+  branches:
+    master:
+    - parallel: *checks
+    - parallel: *tests
+    - step: *field-test

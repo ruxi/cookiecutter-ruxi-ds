@@ -1,0 +1,37 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: application-job-backup
+spec:
+  schedule: "59 1 * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: application
+            image: IMAGE
+{%- if cookiecutter.framework == 'Django'  %}
+            command: ['/bin/bash', '-c']
+            args:
+              - python manage.py dumpdata -o /app/backups/db.json ;
+                echo backup to /app/backups/db.json ;
+                cat /app/backups/db.json ;
+            envFrom:
+            - secretRef:
+                name: application
+            volumeMounts:
+              - mountPath: /app/backups
+                name: backup-volume          
+{%- else %}
+            command: ['curl', 'http://localhost:8080/sentry-debug/']
+{%- endif %}
+          restartPolicy: Never
+{%- if cookiecutter.framework == 'Django' %}
+          volumes:
+            - name: backup-volume
+              emptyDir: {}
+{%- endif %}

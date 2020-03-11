@@ -1,0 +1,73 @@
+{
+    "full_name": "Your name",
+    "email": "your.name@example.com",
+    "project_name": "Name of the project",
+    "project_description": "A short description of the project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "license": [
+        "Proprietary",
+        "Apache-2",
+        "BSD-3",
+        "GPL-3",
+        "MIT",
+        "MPL-2"
+    ],
+    "vcs_platform": [
+        "GitLab.com",
+        "Bitbucket.org",
+        "GitHub.com"
+    ],
+    "vcs_account": "company-or-username",
+    "ci_service": [
+        ".gitlab-ci.yml",
+        "bitbucket-pipelines.yml",
+        ".travis.yml",
+        "codeship-steps.yml",
+        "shippable.yml"
+    ],
+    "container_platform": [
+        "(none)",
+        "APPUiO"
+    ],
+    "container_platform_account": "platform-username",
+    "environment_strategy": [
+        "shared",
+        "dedicated"
+    ],
+    "docker_registry": "{{ cookiecutter.container_platform.replace('APPUiO', 'registry.appuio.ch').replace('(none)', cookiecutter.vcs_platform.replace('Bitbucket.org', 'hub.docker.com').replace('GitHub.com', 'quay.io').replace('GitLab.com', 'registry.gitlab.com') + '/' + cookiecutter.vcs_account) }}",
+    "framework": [
+        "(none)",
+        "Django",
+        "Flask",
+        "Symfony",
+        "TYPO3"
+    ],
+    "database": [
+        "(none)",
+        "Postgres",
+        "MySQL"
+    ],
+    "cronjobs": [
+        "(none)",
+        "simple",
+        "complex"
+    ],
+    "checks": "flake8,pylint,bandit,safety,kubernetes",
+    "tests": "py37,behave",
+    "monitoring": [
+        "(none)",
+        "Datadog",
+        "NewRelic",
+        "Sentry"
+    ],
+    "push": [
+        "manual",
+        "automatic",
+        "force"
+    ],
+    "_copy_without_render": [
+        "_/frameworks/Flask",
+        "_/frameworks/Symfony",
+        "_/frameworks/TYPO3"
+    ]
+}

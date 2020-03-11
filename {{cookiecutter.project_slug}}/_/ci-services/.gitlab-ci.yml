@@ -1,0 +1,7 @@
+# Painless deployment with GitLab CI.
+# Visit the docs at https://docs.gitlab.com/ce/ci/
+{% include '_/ci-services/definitions/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/lint-stage/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/test-stage/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/build-stage/%s' % cookiecutter.ci_service -%}
+{% include '_/ci-services/deploy-stage/%s' % cookiecutter.ci_service -%}

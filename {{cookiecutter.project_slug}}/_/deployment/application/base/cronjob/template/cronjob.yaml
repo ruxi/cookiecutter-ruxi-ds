@@ -1,0 +1,28 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: application-job
+spec:
+  schedule: ""
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: application
+            image: IMAGE
+            command: ['/bin/bash', '-c']
+            args: ARGS
+            envFrom:
+              - secretRef:
+                  name: application
+            volumeMounts:
+              - mountPath: /app/backups
+                name: backup-volume
+          restartPolicy: Never
+          volumes:
+            - name: backup-volume
+              emptyDir: {}
