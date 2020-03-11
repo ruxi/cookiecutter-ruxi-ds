@@ -30,17 +30,17 @@ Boilerplate includes preloaded conda environment.yml of standard data science to
 
    
 .. |issues| image:: https://img.shields.io/github/issues/ruxi/cookiecutter-ruxi-ds/master.svg
-   :target: https://img.shields.io/github/issues/ruxi/cookiecutter-conda-datascience
+   :target: https://img.shields.io/github/issues/ruxi/cookiecutter-ruxi-ds
 
 .. |last commit| image::  https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds/master.svg
-   :target: https://img.shields.io/github/last-commit/ruxi/cookiecutter-conda-datascience
+   :target: https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds
 
 .. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds/master.svg
-   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-conda-datascience
+   :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds
 
 
 .. |travis-ci| image:: https://img.shields.io/travis/ruxi/cookiecutter-ruxi-ds/master.svg
-   :target: https://travis-ci.org/ruxi/cookiecutter-conda-datascience
+   :target: https://travis-ci.org/ruxi/cookiecutter-ruxi-ds
    :alt: Travis CI
 
 
