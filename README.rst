@@ -14,18 +14,18 @@ Boilerplate includes preloaded conda environment.yml of standard data science to
 
 
 
-.. |coverage-codacy| image:: https://img.shields.io/codacy/coverage/
-   :target: https://img.shields.io/codacy/coverage/
+.. |coverage-codacy| image:: https://img.shields.io/codacy/coverage/fd7f451342dc46b1ac0301d986f9b6a0/master.svg
+   :target: https://img.shields.io/codacy/coverage/fd7f451342dc46b1ac0301d986f9b6a0
 
-.. |grade-codacy| image:: https://img.shields.io/codacy/grade/
-   :target: https://img.shields.io/codacy/grade/
+.. |grade-codacy| image:: https://img.shields.io/codacy/grade/fd7f451342dc46b1ac0301d986f9b6a0/master.svg
+   :target: https://app.codacy.com/ruxi/grade/fd7f451342dc46b1ac0301d986f9b6a0
 
-.. |shippable-ci| image:: https://img.shields.io/shippable/
-   :target: https://app.shippable.com/projects/
+.. |shippable-ci| image:: https://img.shields.io/shippable/5e6888ca7cb7fa000657594e/master.svg
+   :target: https://app.shippable.com/projects/5e6888ca7cb7fa000657594e
    :alt: Shippable
 
-.. |codeship-ci| image:: https://img.shields.io/codeship/
-   :target: https://app.codeship.com/projects/
+.. |codeship-ci| image:: https://img.shields.io/codeship/45a9ae30-4592-0138-3cfc-36e98d2c9ab6/master.svg
+   :target: https://app.codeship.com/projects/45a9ae30-4592-0138-3cfc-36e98d2c9ab6
    :alt: codeship
 
    
