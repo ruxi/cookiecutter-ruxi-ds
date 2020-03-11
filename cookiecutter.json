@@ -36,9 +36,7 @@
     "framework": [
         "(none)",
         "Django",
-        "Flask",
-        "Symfony",
-        "TYPO3"
+        "Flask"
     ],
     "database": [
         "(none)",
