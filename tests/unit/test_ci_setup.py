@@ -34,32 +34,6 @@ class TestCISetup:
             'environment_strategy': 'shared',
             'expected_ci_target': '',
         }),
-        ('gitlab-shared', {
-            'project_slug': 'myproject',
-            'vcs_account': 'painless-software',
-            'vcs_platform': 'GitLab.com',
-            'ci_service': '.gitlab-ci.yml',
-            'ci_testcommand': '  script: tox -e py37',
-            'checks': 'flake8,pylint,bandit',
-            'tests': 'py35,py36,py37,pypy3,behave',
-            'container_platform': 'APPUiO',
-            'environment_strategy': 'shared',
-            'expected_ci_target':
-                '  TARGET: myproject',
-        }),
-        ('gitlab-dedicated', {
-            'project_slug': 'myproject',
-            'vcs_account': 'painless-software',
-            'vcs_platform': 'GitLab.com',
-            'ci_service': '.gitlab-ci.yml',
-            'ci_testcommand': '  script: tox -e py37',
-            'checks': 'flake8,pylint,bandit',
-            'tests': 'py35,py36,py37,pypy3,behave',
-            'container_platform': 'APPUiO',
-            'environment_strategy': 'dedicated',
-            'expected_ci_target':
-                '    TARGET: myproject-production',
-        }),
         ('shippable', {
             'project_slug': 'myproject',
             'vcs_account': 'painless-software',

@@ -61,44 +61,7 @@ class TestTestingSetup:
             'match_project_root': [
                 'tests/README.rst',
             ]
-        }),
-        ('symfony', {
-            'project_slug': 'symfony-project',
-            'vcs_account': 'painless-software',
-            'vcs_platform': 'GitHub.com',
-            'ci_service': '.travis.yml',
-            'framework': 'Symfony',
-            'checks': 'phpcs,twig',
-            'tests': 'phpunit',
-            'test_configuration': [
-                ('composer.json', [
-                    '        "check": [\n'
-                    '            "@composer phpcs",\n'
-                    '            "@composer twig"\n'
-                    '        ],',
-                    '        "test": [\n'
-                    '            "@composer phpunit"\n'
-                    '        ],',
-                ]),
-            ],
-            'match_project_root': [
-            ]
-        }),
-        ('typo3', {
-            'project_slug': 'typo3-project',
-            'vcs_account': 'painless-software',
-            'vcs_platform': 'GitHub.com',
-            'ci_service': '.travis.yml',
-            'framework': 'TYPO3',
-            'checks': 'phpcs',
-            'tests': 'phpunit',
-            'test_configuration': [
-                ('composer.json', [
-                ]),
-            ],
-            'match_project_root': [
-            ]
-        }),
+        })
     ]
 
     # pylint: disable=too-many-arguments,too-many-locals,no-self-use

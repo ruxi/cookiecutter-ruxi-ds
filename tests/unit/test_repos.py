@@ -24,15 +24,7 @@ class TestRepos:
             'vcs_remote': 'git@github.com:painless-software/myproject.git',
             'ci_service': '.travis.yml',
             'docker_registry': 'quay.io/painless-software',
-        }),
-        ('GitLab/Registry', {
-            'project_slug': 'myproject',
-            'vcs_account': 'painless-software',
-            'vcs_platform': 'GitLab.com',
-            'vcs_remote': 'git@gitlab.com:painless-software/myproject.git',
-            'ci_service': '.gitlab-ci.yml',
-            'docker_registry': 'registry.gitlab.com/painless-software',
-        }),
+        })
     ]
 
     # pylint: disable=too-many-arguments,too-many-locals,no-self-use
