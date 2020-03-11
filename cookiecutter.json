@@ -1,16 +1,17 @@
 {
-    "full_name": "Your name",
-    "email": "your.name@example.com",
+
     "project_name": "Name of the project",
     "project_description": "A short description of the project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "full_name": "Your name",
+    "email": "your.name@example.com",
     "license": [
-        "Proprietary",
-        "Apache-2",
+        "MIT",
         "BSD-3",
         "GPL-3",
-        "MIT",
+        "Apache-2",
         "MPL-2"
+        "Proprietary",
     ],
     "vcs_platform": [
         "Bitbucket.org",
@@ -61,9 +62,6 @@
         "automatic",
         "force"
     ],
-    "_copy_without_render": [
-        "_/frameworks/Flask",
-        "_/frameworks/Symfony",
-        "_/frameworks/TYPO3"
-    ]
+    "_copy_without_render":  "_/frameworks/Flask",
+   
 }
