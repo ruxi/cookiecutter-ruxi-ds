@@ -13,13 +13,11 @@
         "MPL-2"
     ],
     "vcs_platform": [
-        "GitLab.com",
         "Bitbucket.org",
         "GitHub.com"
     ],
     "vcs_account": "company-or-username",
     "ci_service": [
-        ".gitlab-ci.yml",
         "bitbucket-pipelines.yml",
         ".travis.yml",
         "codeship-steps.yml",
