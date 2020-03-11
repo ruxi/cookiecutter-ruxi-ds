@@ -7,7 +7,7 @@ cookiecutter painless data science
 
 Project template for reproducible data science using conda environments. This `cookiecutter`_ is forked from `painless-continuous-delivery`_ for continous integration support
 
-The directory structure of this boilerplate is based recommendations from `datadriven-datascience-cookiecutter`_
+The directory structure is based recommendations from `datadriven-datascience-cookiecutter`_
 
 Boilerplate includes preloaded conda environment.yml of standard data science tools.  
 
@@ -29,25 +29,25 @@ Boilerplate includes preloaded conda environment.yml of standard data science to
    :alt: codeship
 
    
-.. |issues| image:: https://img.shields.io/github/issues/ruxi/cookiecutter-conda-datascience/master.svg
+.. |issues| image:: https://img.shields.io/github/issues/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://img.shields.io/github/issues/ruxi/cookiecutter-conda-datascience
 
-.. |last commit| image::  https://img.shields.io/github/last-commit/ruxi/cookiecutter-conda-datascience/master.svg
+.. |last commit| image::  https://img.shields.io/github/last-commit/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://img.shields.io/github/last-commit/ruxi/cookiecutter-conda-datascience
 
-.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-conda-datascience/master.svg
+.. |version| image::  https://img.shields.io/github/v/release/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://img.shields.io/github/v/release/ruxi/cookiecutter-conda-datascience
 
 
-.. |travis-ci| image:: https://img.shields.io/travis/ruxi/cookiecutter-conda-datascience/master.svg
+.. |travis-ci| image:: https://img.shields.io/travis/ruxi/cookiecutter-ruxi-ds/master.svg
    :target: https://travis-ci.org/ruxi/cookiecutter-conda-datascience
    :alt: Travis CI
 
 
 
 
-.. |bitbucket-ci| image:: https://img.shields.io/bitbucket/pipelines/ruxi/cookiecutter-conda-datascience/master.svg
-   :target: https://bitbucket.org/ruxi/cookiecutter-conda-datascience/addon/pipelines/home
+.. |bitbucket-ci| image:: https://img.shields.io/bitbucket/pipelines/ruxi/cookiecutter-ruxi-ds/master.svg
+   :target: https://bitbucket.org/ruxi/cookiecutter-ruxi-ds/addon/pipelines/home
    :alt: Bitbucket Pipelines
 
 
@@ -66,7 +66,7 @@ Generate a new Cookiecutter template layout:
 
 .. code-block:: bash
 
-    cookiecutter gh:ruxi/cookiecutter-conda-datascience
+    cookiecutter gh:ruxi/cookiecutter-ruxi-ds
 
 
 .. |asciicast| image:: https://asciinema.org/a/244658.svg
